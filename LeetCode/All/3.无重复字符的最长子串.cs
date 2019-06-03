@@ -5,8 +5,8 @@
  */
 using System;
 using System.Collections.Generic;
-public class LengthOfLongestSubstringSolution
-// public class Solution
+// public class LengthOfLongestSubstringSolution
+public class Solution
 
 {
     public int LengthOfLongestSubstringSelf(string s)
@@ -51,6 +51,7 @@ public class LengthOfLongestSubstringSolution
                 {
                     // 重复点前面废弃得值
                     charDict[s[i]] = i;
+                    curCount++;
                 }
                 curCount = i - startIndex;
             }
