@@ -15,7 +15,7 @@ public class Maze
 
     public void Func(int verLen, int horLen, List<List<int>> maze)
     {
-        var res = 0;
+        // var res = 0;
         for (int i = 0; i < verLen; i++)
         {
             for (int j = 0; j < horLen; j++)

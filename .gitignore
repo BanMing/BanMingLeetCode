@@ -1,4 +1,16 @@
 
-/LeetCode/bin/
-/LeetCode/obj/
-/LeetCode/obj/
+LeetCode/bin/
+LeetCode/obj/
+LeetCode/obj/
+LeetCode/obj/Debug/netcoreapp2.1/LeetCode.assets.cache
+LeetCode/obj/LeetCode.csproj.nuget.cache
+LeetCode/obj/Debug/netcoreapp2.1/LeetCode.csproj.CoreCompileInputs.cache
+LeetCode/obj/LeetCode.csproj.nuget.g.props
+LeetCode/obj/Debug/netcoreapp2.1/LeetCode.assets.cache
+LeetCode/obj/Debug/netcoreapp2.1/LeetCode.csprojAssemblyReference.cache
+Niuke/obj/Debug/netcoreapp2.1/Niuke.assets.cache
+Niuke/obj/Niuke.csproj.nuget.cache
+Niuke/obj/Niuke.csproj.nuget.g.props
+Niuke/obj/Niuke.csproj.nuget.g.targets
+Niuke/obj/project.assets.json
+Niuke/obj/Debug/netcoreapp2.1/Niuke.csproj.CoreCompileInputs.cache
