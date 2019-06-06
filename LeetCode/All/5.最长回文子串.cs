@@ -7,8 +7,8 @@
 
 using System.Collections.Generic;
 using System;
-// public class LongestPalindromeSolution
-public class Solution
+public class LongestPalindromeSolution
+// public class Solution
 {
 
     public string LongestPalindrome(string s)
