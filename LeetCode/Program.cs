@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new LengthOfLongestSubstringSolution();
+            var obj = new LongestPalindromeSolution();
             obj.Test();
         }
     }
