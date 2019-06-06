@@ -5,8 +5,8 @@
  */
 using System;
 using System.Collections.Generic;
-// public class LengthOfLongestSubstringSolution
-public class Solution
+public class LengthOfLongestSubstringSolution
+// public class Solution
 
 {
     public int LengthOfLongestSubstringSelf(string s)

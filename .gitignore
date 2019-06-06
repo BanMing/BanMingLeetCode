@@ -1,4 +1,4 @@
 
-**.DS_Store
-*/[Bb]in/
-*/[Oo]bj/
+/LeetCode/bin/
+/LeetCode/obj/
+/LeetCode/obj/

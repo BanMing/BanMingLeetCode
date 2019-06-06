@@ -9,3 +9,14 @@
 /Users/BanMing/Coding/Unity/BanMing/BanMingLeetCode/LeetCode/bin/Debug/netcoreapp2.1/LeetCode.pdb
 /Users/BanMing/Coding/Unity/BanMing/BanMingLeetCode/LeetCode/obj/Debug/netcoreapp2.1/LeetCode.dll
 /Users/BanMing/Coding/Unity/BanMing/BanMingLeetCode/LeetCode/obj/Debug/netcoreapp2.1/LeetCode.pdb
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.csprojAssemblyReference.cache
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.csproj.CoreCompileInputs.cache
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.AssemblyInfoInputs.cache
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.AssemblyInfo.cs
+D:\BanMingLeetCode\LeetCode\bin\Debug\netcoreapp2.1\LeetCode.deps.json
+D:\BanMingLeetCode\LeetCode\bin\Debug\netcoreapp2.1\LeetCode.runtimeconfig.json
+D:\BanMingLeetCode\LeetCode\bin\Debug\netcoreapp2.1\LeetCode.runtimeconfig.dev.json
+D:\BanMingLeetCode\LeetCode\bin\Debug\netcoreapp2.1\LeetCode.dll
+D:\BanMingLeetCode\LeetCode\bin\Debug\netcoreapp2.1\LeetCode.pdb
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.dll
+D:\BanMingLeetCode\LeetCode\obj\Debug\netcoreapp2.1\LeetCode.pdb
