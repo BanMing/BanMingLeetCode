@@ -6,8 +6,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// public class FindMedianSortedArraysSolution
-public class Solution
+public class FindMedianSortedArraysSolution
+// public class Solution
 {
     public double FindMedianSortedArrays(int[] nums1, int[] nums2)
     {

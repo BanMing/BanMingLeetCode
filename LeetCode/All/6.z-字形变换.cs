@@ -8,10 +8,11 @@ using System.Text;
 using System.Collections.Generic;
 using System;
 
-// public class ConvertSolution
-public class Solution
+public class ConvertSolution
+// public class Solution
 {
-    public string Convert(string s, int numRows)
+    // 寻找规律，推到公式，不是很好的办法
+    public string ConvertSelf(string s, int numRows)
     {
         if (s.Length == 1 || numRows == 1)
         {
@@ -37,25 +38,38 @@ public class Solution
         return res.ToString();
     }
 
-    public string ConvertNet(string s, int numRows)
+    // 以每一行排列来依次累加
+    // 从第一列开计算
+    // 更加取巧
+    public string Convert(string s, int numRows)
     {
         var strs = new string[numRows];
+        // 存储每行基础数据
         for (int i = 0; i < numRows; i++)
         {
             strs[i] = "";
         }
         for (int i = 0; i < s.Length;)
         {
-            for (int j = 0; j < numRows; j++)
+            // 计算全部都是齐的一列
+            for (int j = 0; j < numRows && i < s.Length; j++)
             {
                 strs[j] += s[i];
                 i++;
             }
-            for (int j = 0; j < length; j++)
+            // 计算z字斜像
+            for (int j = numRows - 2; j > 0 && i < s.Length; j--)
             {
-                
+                strs[j] += s[i];
+                i++;
             }
         }
+        string res = "";
+        for (int i = 0; i < numRows; i++)
+        {
+            res += strs[i];
+        }
+        return res;
     }
     public void Test()
     {
