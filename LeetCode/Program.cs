@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new ReverseSolution();
+            var obj = new MyAtoiSolution();
             obj.Test();
         }
     }

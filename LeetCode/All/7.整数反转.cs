@@ -6,8 +6,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// public class ReverseSolution
-public class Solution
+public class ReverseSolution
+// public class Solution
 {
     public int Reverse(int x)
     {
