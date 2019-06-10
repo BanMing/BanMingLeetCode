@@ -6,8 +6,8 @@
 using System;
 using System.Collections.Generic;
 
-// public class IsPalindromeSolution
-public class Solution
+public class IsPalindromeSolution
+// public class Solution
 {
 
     public bool IsPalindrome(int x)
