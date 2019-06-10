@@ -6,8 +6,8 @@
 using System;
 using System.Collections.Generic;
 
-public class IsPalindromeSolution
-// public class Solution
+// public class IsPalindromeSolution
+public class Solution
 {
 
     public bool IsPalindrome(int x)
@@ -20,10 +20,14 @@ public class IsPalindromeSolution
         {
             return false;
         }
+        if (x < 10)
+        {
+            return true;
+        }
         for (int i = 1; i < int.MaxValue; i++)
         {
             var num = x % (int)Math.Pow(10, i);
-            if (nums.Contains(num))
+            if (nums.Contains(num) && num == x)
             {
                 break;
             }
@@ -32,9 +36,9 @@ public class IsPalindromeSolution
             weis.Add(wei);
         }
         int res = 0;
-        for (int i = weis.Count - 1; i > 0; i--)
+        for (int i = 1; i < weis.Count; i++)
         {
-            res += (int)Math.Pow(10, i - 1) * weis[i];
+            res += (int)Math.Pow(10, weis.Count - i - 1) * weis[i];
         }
         return res == x;
     }
@@ -48,6 +52,7 @@ public class IsPalindromeSolution
         Console.WriteLine("121:" + IsPalindrome(121));
         Console.WriteLine("-121:" + IsPalindrome(-121));
         Console.WriteLine("10:" + IsPalindrome(10));
+        Console.WriteLine("123:" + IsPalindrome(123));
     }
 
 }
