@@ -49,9 +49,9 @@ public class IsPalindromeSolution
         //     Console.WriteLine("%:" + 121 % Math.Pow(10, i));
         //     // Console.WriteLine("/:" + 121 / (int)Math.Pow(10, i));
         // }
-        Console.WriteLine("121:" + IsPalindrome(121));
-        Console.WriteLine("-121:" + IsPalindrome(-121));
-        Console.WriteLine("10:" + IsPalindrome(10));
+        // Console.WriteLine("121:" + IsPalindrome(121));
+        // Console.WriteLine("-121:" + IsPalindrome(-121));
+        // Console.WriteLine("10:" + IsPalindrome(10));
         Console.WriteLine("123:" + IsPalindrome(123));
     }
 
