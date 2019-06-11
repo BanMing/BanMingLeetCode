@@ -4,9 +4,20 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
         {
-            "name": ".NET Core Launch (console)",
+            "name": "SomeTests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/SomeTests/bin/Debug/netcoreapp2.2/SomeTests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/SomeTests",
+            // "requireExactSource": false,
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "LeetCode",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -15,12 +26,6 @@
             "cwd": "${workspaceFolder}/LeetCode",
             "console": "internalConsole",
             "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
         }
     ]
 }
