@@ -6,8 +6,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            // var obj = new IsMatchSolution();
-            // obj.Test();
+            var obj = new MaxSubArraySolution();
+            obj.Test();
         }
     }
 }

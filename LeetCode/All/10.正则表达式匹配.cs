@@ -5,8 +5,8 @@
  */
 using System;
 using System.Collections.Generic;
-// public class IsMatchSolution
-public class Solution
+public class IsMatchSolution
+// public class Solution
 {
     public bool IsMatchSelf(string s, string p)
     {
