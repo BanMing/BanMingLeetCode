@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new MaxSubArraySolution();
+            var obj = new ClimbStairsSolution();
             obj.Test();
         }
     }
