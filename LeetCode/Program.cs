@@ -6,8 +6,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new RobSolution();
-            obj.Test();
+            // var obj = new NumArray();
+            // obj.Test();
         }
     }
 }
