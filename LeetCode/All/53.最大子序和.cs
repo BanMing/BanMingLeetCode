@@ -17,6 +17,9 @@ public class MaxSubArraySolution
         int max = nums[0];
         for (int i = 1; i < nums.Length; i++)
         {
+            // f[x] = max(nums[x],f[x-1]+nums[x])
+            // f[x] = num[x]>0?f[x-1]+nums[x]:nums[x]
+            // 
             f[i] = System.Math.Max(f[i - 1] + nums[i], nums[i]);
             max = System.Math.Max(f[i], max);
             System.Console.WriteLine($"f[{i}]={f[i]}");
