@@ -6,8 +6,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            // var obj = new NumArray();
-            // obj.Test();
+            var obj = new MinCostClimbingStairsSolution();
+            obj.Test();
         }
     }
 }
