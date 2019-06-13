@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new MinCostClimbingStairsSolution();
+            var obj = new UniquePathsSolution();
             obj.Test();
         }
     }
