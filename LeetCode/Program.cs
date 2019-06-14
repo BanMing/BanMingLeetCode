@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new UniquePathsSolution();
+            var obj = new MaxAreaSolution();
             obj.Test();
         }
     }
