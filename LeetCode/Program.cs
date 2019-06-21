@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new MaxAreaSolution();
+            var obj = new IntToRomanSolution();
             obj.Test();
         }
     }
