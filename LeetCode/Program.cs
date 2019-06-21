@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new IntToRomanSolution();
+            var obj = new RomanToIntSolution();
             obj.Test();
         }
     }
