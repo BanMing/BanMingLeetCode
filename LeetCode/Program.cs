@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new RomanToIntSolution();
+            var obj = new LongestCommonPrefixSolution();
             obj.Test();
         }
     }
