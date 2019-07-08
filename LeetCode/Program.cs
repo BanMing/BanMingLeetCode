@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new LongestCommonPrefixSolution();
+            var obj = new ThreeSumSolution();
             obj.Test();
         }
     }
