@@ -6,46 +6,54 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// public class ThreeSumClosestSolution
-public class Solution
+public class ThreeSumClosestSolution
+// public class Solution
 {
     public int ThreeSumClosest(int[] nums, int target)
     {
-        var numList = new List<int>(nums);
-        numList.Sort();
-        int minIndex = int.MaxValue;
-        int min = int.MaxValue;
-        for (int i = 0; i < numList.Count; i++)
+        int res = 0;
+
+        if (nums.Length < 4)
         {
-            if (min > numList[i] - target)
+            for (int i = 0; i < nums.Length; i++)
             {
-                min = numList[i] - target;
-                minIndex = i;
+                res += nums[i];
             }
         }
-        var res = new List<int>();
-        if (minIndex + 1 < numList.Count && minIndex - 1 > 0)
+
+        var disList = new List<int>(nums);
+        disList.Add(target);
+
+        disList.Sort();
+
+        int index = disList.IndexOf(target);
+        if (index + 3 < disList.Count)
         {
-            res.Add(numList[minIndex + 1] + numList[minIndex] + numList[minIndex - 1]);
+            res = disList[index + 1] + disList[index + 2] + disList[index + 3];
+            // minDis = 3 * target - minDis;
         }
-        if (minIndex + 1 < numList.Count - 1)
+        if (index - 3 >= 0)
         {
-            res.Add(numList[minIndex + 1] + numList[minIndex] + numList[minIndex + 2]);
+            res = Math.Max(res, disList[index - 1] + disList[index - 2] + disList[index - 3]);
         }
-        if (minIndex - 2 > 0)
+        if (index - 1 >= 0 && index + 2 < disList.Count)
         {
-            res.Add(numList[minIndex - 1] + numList[minIndex] + numList[minIndex - 2]);
+            res = Math.Max(res, disList[index - 1] + disList[index + 1] + disList[index + 2]);
         }
-        int minRes = int.MaxValue;
-        for (int i = 0; i < res.Count; i++)
+        if (index - 2 >= 0 && index + 1 < disList.Count)
         {
-            minRes = (res[i] - 3 * target) > minRes ? minRes : res[i] - 3 * target;
+            res = Math.Max(res, disList[index - 1] + disList[index - 2] + disList[index + 1]);
         }
-        return minRes;
+
+
+        return res;
     }
     public void Test()
     {
-
+        System.Console.WriteLine("nums = [-1，2，1，-4] target = 1:" + ThreeSumClosest(new int[] { -1, 2, 1, -4 }, 1));
+        // System.Console.WriteLine("nums = [0, 0, 0] target = 1:" + ThreeSumClosest(new int[] { 0, 0, 0 }, 1));
+        // System.Console.WriteLine("nums = [1, 1, 1,1] target = 0:" + ThreeSumClosest(new int[] { 1, 1, 1, 1 }, 0));
+        // System.Console.WriteLine("nums = [1, 1, 1,0] target = -100:" + ThreeSumClosest(new int[] { 1, 1, 1, 0 }, -100));
     }
 }
 
