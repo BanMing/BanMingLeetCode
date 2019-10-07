@@ -1,6 +1,6 @@
 
-LeetCode/bin/
-LeetCode/obj/
+**/bin/
+**/obj/
 Niuke/obj/
 Niuke/bin/
 SomeTests/obj/
