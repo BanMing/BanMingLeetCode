@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new ThreeSumClosestSolution();
+            var obj = new IsPalindromeSolution();
             obj.Test();
         }
     }

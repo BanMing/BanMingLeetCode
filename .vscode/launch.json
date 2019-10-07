@@ -21,9 +21,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/LeetCode/bin/Debug/netcoreapp2.1/LeetCode.dll",
+            "program": "${workspaceFolder}/LeetCode/C#/bin/Debug/netcoreapp2.1/LeetCode.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/LeetCode",
+            "cwd": "${workspaceFolder}/LeetCode/C#",
             "console": "internalConsole",
             "stopAtEntry": false
         }
