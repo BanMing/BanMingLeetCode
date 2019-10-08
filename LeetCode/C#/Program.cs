@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new IsPalindromeSolution();
+            var obj = new IsValidSolution();
             obj.Test();
         }
     }
