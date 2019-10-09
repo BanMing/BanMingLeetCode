@@ -6,7 +6,7 @@
 
 // @lc code=start
 using System;
-using System.Collections.Generic;
+// using System.Collections.Generic;
 // public class Solution
 public class IsValidSolution
 {
@@ -20,7 +20,7 @@ public class IsValidSolution
             {
                 res.Push(s[i]);
             }
-            else if (leftDic[res.Peek()] == s[i])
+            else if (leftDic.ContainsKey(res.Peek()) && leftDic[res.Peek()] == s[i])
             {
                 res.Pop();
             }
