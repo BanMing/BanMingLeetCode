@@ -6,7 +6,7 @@
 
 // @lc code=start
 using System;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 // public class Solution
 public class IsValidSolution
 {
@@ -34,8 +34,9 @@ public class IsValidSolution
     }
     public void Test()
     {
-        // IsValid("(([]){})");
-        IsValid("([)]");
+        System.Console.WriteLine("(([]){})"+ IsValid("(([]){})"));
+        System.Console.WriteLine("([)]"+ IsValid("([)]"));
+        // IsValid("([)]");
     }
 }
 // @lc code=end
