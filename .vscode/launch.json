@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Offer",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Offer/bin/Debug/netcoreapp3.0/Offer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Offer",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
             "name": "SomeTests",
             "type": "coreclr",
             "request": "launch",
