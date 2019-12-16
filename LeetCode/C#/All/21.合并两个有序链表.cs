@@ -23,27 +23,27 @@ public class MergeTwoListsSolution
         {
            if (l1.val<l2.val)
            {
-               next= l1;
+               next.next= l1;
                l1=l1.next;
            }else
            {
-               next = l2;
+               next.next = l2;
                l2=l2.next;
            }
            next =next.next;
         }
-next.next = l1==null ? l2:l1;
+        next.next = l1==null ? l2:l1;
         return head.next;
     }
     public void Test()
     {
-ListNode head=new ListNode(1);
-head.next = new ListNode(2);
-head.next.next = new ListNode(4)
-ListNode end=new ListNode(1);
-end.next = new ListNode(3);
-end.next.next = new ListNode(4)
-MergeTwoLists(head,end);
+        // ListNode head=new ListNode(1);
+        // head.next = new ListNode(2);
+        // head.next.next = new ListNode(4);
+        // ListNode end=new ListNode(1);
+        // end.next = new ListNode(3);
+        // end.next.next = new ListNode(4);
+        // MergeTwoLists(head,end);
     }
 }
 // @lc code=end
