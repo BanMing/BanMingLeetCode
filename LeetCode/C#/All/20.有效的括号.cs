@@ -34,8 +34,9 @@ public class IsValidSolution
     }
     public void Test()
     {
-        // IsValid("(([]){})");
-        IsValid("([)]");
+        System.Console.WriteLine("(([]){})"+ IsValid("(([]){})"));
+        System.Console.WriteLine("([)]"+ IsValid("([)]"));
+        // IsValid("([)]");
     }
 }
 // @lc code=end

@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new MergeTwoListsSolution();
+            var obj = new RemoveDuplicatesSolution();
             obj.Test();
         }
     }
