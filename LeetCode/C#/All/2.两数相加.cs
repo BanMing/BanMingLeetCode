@@ -11,12 +11,12 @@
  *     public ListNode(int x) { val = x; }
  * }
  */
-public class ListNode
-{
-    public int val;
-    public ListNode next;
-    public ListNode(int x) { val = x; }
-}
+// public class ListNode
+// {
+//     public int val;
+//     public ListNode next;
+//     public ListNode(int x) { val = x; }
+// }
 public class AddTwoNumbersSolution
 // public class Solution
 {
