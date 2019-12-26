@@ -73,7 +73,7 @@ namespace Offer
 
         public static int Qestion2(int[] array)
         {
-            int startIndex = 0;
+            // int startIndex = 0;
             int targetNum = array.Length / 2;
             int count = 0;
 
@@ -92,7 +92,7 @@ namespace Offer
             {
                 targetNum = (targetNum + array.Length) / 2;
             }
-
+            return 0;
         }
         private static int getNumCount(int[] array, int startIndex, int middleIndex, int endIndex)
         {
