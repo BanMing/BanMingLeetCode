@@ -6,8 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var obj = new RemoveDuplicatesSolution();
-            obj.Test();
+            Solution.Run();
         }
     }
 }

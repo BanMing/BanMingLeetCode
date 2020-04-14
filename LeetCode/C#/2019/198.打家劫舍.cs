@@ -3,8 +3,8 @@
  *
  * [198] 打家劫舍
  */
-// public class RobSolution
-public class Solution
+public class RobSolution
+// public class Solution
 {
     // 动态规划
     public int Rob(int[] nums)
