@@ -20,7 +20,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/SomeTests/bin/Debug/netcoreapp2.2/SomeTests.dll",
+            "program": "${workspaceFolder}/SomeTests/bin/Debug/netcoreapp2.1/SomeTests.dll",
             "args": [],
             "cwd": "${workspaceFolder}/SomeTests",
             // "requireExactSource": false,

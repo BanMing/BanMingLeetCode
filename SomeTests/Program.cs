@@ -7,7 +7,7 @@ namespace SomeTests
     {
         static void Main(string[] args)
         {
-            // CoinChange.Run();
+            Bag01.Run();
         }
     }
 }
