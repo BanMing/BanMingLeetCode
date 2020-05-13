@@ -1,0 +1,5 @@
+{
+    "cmake.buildDirectory": "${workspaceFolder}/LeetCode/C++/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/LeetCode/C++",
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+}
