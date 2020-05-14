@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(Windows) Leetcode C++",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Leetcode/C++/build/leetcode.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false
+        },
+        {
             "name": "Offer",
             "type": "coreclr",
             "request": "launch",
@@ -20,7 +31,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/SomeTests/bin/Debug/netcoreapp2.2/SomeTests.dll",
+            "program": "${workspaceFolder}/SomeTests/bin/Debug/netcoreapp2.1/SomeTests.dll",
             "args": [],
             "cwd": "${workspaceFolder}/SomeTests",
             // "requireExactSource": false,

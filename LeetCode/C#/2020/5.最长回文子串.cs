@@ -11,7 +11,8 @@
 public class Solution
 {
 
-    public string LongestPalindrome(string s)
+    public string LongestPalindrome1(string s)
+    // public string LongestPalindrome(string s)
     {
         if (string.IsNullOrEmpty(s) || s.Length < 2)
         {
@@ -45,7 +46,67 @@ public class Solution
         }
         return s.Substring(startIndex, maxLength);
     }
-    // TODO ：动态规划不会
+
+    public string LongestPalindrome(string str)
+    // public string dpTableLongestPalindrome(string str)
+    {
+        if (string.IsNullOrEmpty(str) || str.Length < 2)
+        {
+            return str;
+        }
+        // 计算长度为2的回文
+        if (str.Length < 3)
+        {
+            if (str[0] == str[1])
+            {
+                return str;
+            }
+            else
+            {
+                return str[0].ToString();
+            }
+        }
+        bool[][] dp = new bool[str.Length][];
+        int start = 0;
+        int maxLength = 1;
+        // 计算长度为1和2的回文字符串即为相同
+        for (int i = 0; i < str.Length; i++)
+        {
+            dp[i] = new bool[str.Length];
+            dp[i][i] = true;
+            if (i + 1 < str.Length && str[i] == str[i + 1])
+            {
+                dp[i][i + 1] = true;
+                start = i;
+                maxLength = 2;
+            }
+        }
+
+        // 计算大于2的回文 i表示检测回文长度
+        for (int i = 3; i <= str.Length; i++)
+        {
+            // j表示开始的index ,m表示结束index
+            for (int j = 0; j + i - 1 < str.Length; j++)
+            {
+                int m = j + i - 1;
+                // 新的两端相同以及长度减2的是回文即这个也是回文babad
+                // int x = j + 1 < 0 ? 0 : j - 1;
+                // int y = m > str.Length ? str.Length - 1 : m;
+                if (str[j] == str[m] && j + 1 < str.Length && m - 1 >= 0 && dp[j + 1][m - 1])
+                {
+                    dp[j][m] = true;
+                    if (i > maxLength)
+                    {
+                        maxLength = i;
+                        start = j;
+                    }
+                }
+            }
+        }
+        return str.Substring(start, maxLength);
+    }
+
+
     #region self
     public string SelfLongestPalindrome(string s)
     {
@@ -81,9 +142,13 @@ public class Solution
     public static void Run()
     {
         Solution longest = new Solution();
-        System.Console.WriteLine((longest.LongestPalindrome("babad")));
+        // System.Console.WriteLine((longest.LongestPalindrome("babad")));
+        // System.Console.WriteLine((longest.dpTableLongestPalindrome("babad")));
         // System.Console.WriteLine((longest.LongestPalindrome("cbbd")));
+        // System.Console.WriteLine((longest.dpTableLongestPalindrome("cbbd")));
         // System.Console.WriteLine((longest.LongestPalindrome("bb")));
+        // System.Console.WriteLine((longest.dpTableLongestPalindrome("bb")));
+        System.Console.WriteLine((longest.LongestPalindrome("ccc")));
     }
 }
 
