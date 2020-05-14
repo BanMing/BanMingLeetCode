@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(mac) leetcode c++",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Leetcode/C++/build/leetcode",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
             "name": "(Windows) Leetcode C++",
             "type": "cppvsdbg",
             "request": "launch",
