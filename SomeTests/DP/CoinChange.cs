@@ -47,10 +47,34 @@ public class CoinChange
         return res;
     }
 
+    private int dpTabChange(int[] coins, int amount)
+    {
+        if (amount == 0)
+        {
+            return -1;
+        }
+        Dictionary<int, int> dp = new Dictionary<int, int>();
+        dp[0] = 0;
+        for (int i = 1; i <= amount; i++)
+        {
+            dp[i] = int.MaxValue;
+            for (int j = 0; j < coins.Length; j++)
+            {
+                if (i >= coins[j])
+                {
+                    dp[i] = Math.Min(dp[i], dp[i - coins[j]] + 1);
+                }
+            }
+            dp[i] = dp[i] == int.MaxValue ? -1 : dp[i];
+        }
+        return dp[amount] == int.MaxValue ? -1 : dp[amount];
+    }
+
     public static void Run()
     {
         CoinChange coinChange = new CoinChange();
         Console.WriteLine(coinChange.forceConinChange(new int[] { 1, 2, 5 }, 11));
+        Console.WriteLine(coinChange.dpTabChange(new int[] { 1, 2, 5 }, 11));
     }
 
 }
