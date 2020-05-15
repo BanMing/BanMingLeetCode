@@ -20,24 +20,36 @@ public:
 
         while (i < s.length())
         {
-            if (s[i] == p[j])
+            if (isSameChar(s[i], p[j]))
             {
-                i++;
                 j++;
             }
+            else if (p[j] == '*')
+            {
+                if (j > 0 && isSameChar(s[i], p[j - 1]))
+                {
+                    j++;
+                }
+                else if (j < p.length() && isSameChar(s[i], p[j - 1]))
+                {
+                    j += 2;
+                }
+            }
 
-            cout << s[i] << endl;
             i++;
         }
-
-        return s.compare(p) == 0;
+        return i == j;
+    }
+    bool isSameChar(char s, char p)
+    {
+        return s == p || p == '.';
     }
 };
 
 void Run()
 {
     Solution solution;
-    cout << solution.isMatch("aa", "a") << endl;
+    cout << to_string(solution.isMatch("aa", ".a.")) << endl;
     // cout << solution.isMatch("aa", "a*") << endl;
     // cout << solution.isMatch("ab", ".*") << endl;
     // cout << solution.isMatch("aab", "c*a*b") << endl;
