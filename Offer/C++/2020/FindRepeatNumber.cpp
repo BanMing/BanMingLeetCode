@@ -28,15 +28,38 @@
 */
 #include <iostream>
 #include <vector>
+#include <map>
 using namespace std;
 class Solution
 {
 public:
     int findRepeatNumber(vector<int> &nums)
     {
+        map<int, int> numMap;
+        for (size_t i = 0; i < nums.size(); i++)
+        {
+            if (numMap[nums[i]] == 0)
+            {
+                numMap[nums[i]] = 1;
+            }
+            else
+            {
+                return nums[i];
+            }
+        }
+        return 0;
     }
 };
 
 void Run()
 {
+    Solution solution;
+    int test[] = {11, 23, 4, 44};
+    vector<int> test1(test, test + 4);
+    // for (auto &&i : test1)
+    // {
+    //     cout << i << endl;
+    // }
+
+    cout << solution.findRepeatNumber(test1) << endl;
 }

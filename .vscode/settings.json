@@ -3,6 +3,9 @@
     "cmake.sourceDirectory": "${workspaceFolder}/Offer/C++",
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
     "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
         "*.tcc": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
@@ -43,7 +46,9 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "vector": "cpp",
+        "map": "cpp"
     },
     "cmake.configureOnOpen": true
 }
