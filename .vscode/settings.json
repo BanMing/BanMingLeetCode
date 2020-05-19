@@ -1,6 +1,6 @@
 {
-    "cmake.buildDirectory": "${workspaceFolder}/Offer/C++/build",
-    "cmake.sourceDirectory": "${workspaceFolder}/Offer/C++",
+    "cmake.buildDirectory": "${workspaceFolder}/LeetCode/C++/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/LeetCode/C++",
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
     "files.associations": {
         "*.cjson": "jsonc",
@@ -48,7 +48,17 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "vector": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "fstream": "cpp",
+        "optional": "cpp",
+        "sstream": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "cmake.configureOnOpen": true
 }
