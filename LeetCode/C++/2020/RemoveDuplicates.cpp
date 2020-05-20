@@ -13,15 +13,19 @@ class Solution
 public:
     int removeDuplicates(std::vector<int> &nums)
     {
-        int cout = 0;
-        int len = 0;
-        for (size_t i = 0; i < nums.size(); i++)
+        int index = 0;
+        while (index + 1 < nums.size())
         {
-            if (i + 1 < nums.size() && nums[i] == nums[i + 1])
+            if (nums[index] == nums[index + 1])
             {
-                nums.erase(nums.begin() + i);
+                nums.erase(nums.begin() + index);
+            }
+            else
+            {
+                index++;
             }
         }
+
         return (int)nums.size();
     }
 };
@@ -29,9 +33,10 @@ public:
 void Run()
 {
     Solution solution;
-    int test[] = {11, 23, 4, 44};
-    vector<int> test1(test, test + 4);
-    cout << solution.removeDuplicates(test1) << endl;
+    int test[] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+    vector<int> test1(test, test + 10);
+    printf("left count %d \n", solution.removeDuplicates(test1));
+    // cout << "left count:" + solution.removeDuplicates(test1) << endl;
     for (size_t i = 0; i < test1.size(); i++)
     {
         cout << test1[i] << endl;

@@ -20,7 +20,7 @@
             "name": "(Windows) Leetcode C++",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Leetcode/C++/build/offer.exe",
+            "program": "${workspaceFolder}/Leetcode/C++/build/leetcode.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
