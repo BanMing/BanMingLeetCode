@@ -1,6 +1,6 @@
 {
-    "cmake.buildDirectory": "${workspaceFolder}/LeetCode/C++/build",
-    "cmake.sourceDirectory": "${workspaceFolder}/LeetCode/C++",
+    "cmake.buildDirectory": "${workspaceFolder}/Offer/C++/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/Offer/C++",
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
     "files.associations": {
         "*.cjson": "jsonc",
