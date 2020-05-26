@@ -14,6 +14,7 @@ https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/
 #include <iostream>
 #include <vector>
 #include <map>
+#include <stack>
 using namespace std;
 // Definition for a binary tree node.
 struct TreeNode
@@ -27,6 +28,7 @@ struct TreeNode
 class Solution
 {
 public:
+    // self solution
     TreeNode *buildTreeSelf(vector<int> &preorder, vector<int> &inorder)
     {
         if (preorder.empty() || inorder.empty())
@@ -77,6 +79,7 @@ public:
         return tree;
     }
 
+    // recursion solution
     map<int, int> inorderMap;
     vector<int> Preorder;
     TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder)
@@ -114,6 +117,33 @@ public:
 
             return root;
         }
+    }
+
+    // loop solution fuck error!!!!!!!!!!!1
+    TreeNode *buildTreeLoop(vector<int> &preorder, vector<int> &inorder)
+    {
+        int rootVal = preorder[0];
+        TreeNode *tree = new TreeNode(rootVal);
+
+        TreeNode *res = tree;
+
+        stack<int> treeStack;
+        int index = 0;
+        while (rootVal != inorder[index] && inorder.size() > index)
+        {
+            treeStack.push(inorder[index]);
+            index++;
+        }
+
+        if (treeStack.size() > 0)
+        {
+            int left = treeStack.top();
+            tree->left = new TreeNode(left);
+        }
+        int right = preorder[1 + treeStack.size()];
+        tree->right = new TreeNode(right);
+
+        return res;
     }
 };
 void Run()
