@@ -13,6 +13,7 @@ https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/
 
 #include <iostream>
 #include <vector>
+#include <map>
 using namespace std;
 // Definition for a binary tree node.
 struct TreeNode
@@ -26,7 +27,7 @@ struct TreeNode
 class Solution
 {
 public:
-    TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder)
+    TreeNode *buildTreeSelf(vector<int> &preorder, vector<int> &inorder)
     {
         if (preorder.empty() || inorder.empty())
         {
@@ -75,6 +76,45 @@ public:
         tree->right = buildTree(rightPreNodes, rightInNodes);
         return tree;
     }
+
+    map<int, int> inorderMap;
+    vector<int> Preorder;
+    TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder)
+    {
+        for (size_t i = 0; i < inorder.size(); i++)
+        {
+            inorderMap[inorder[i]] = i;
+        }
+        Preorder = preorder;
+
+        return build(0, preorder.size() - 1, 0, inorder.size() - 1);
+    }
+
+    TreeNode *build(int preStartIndex, int preEndIndex, int inStartIndex, int inEndIndex)
+    {
+        if (preStartIndex > preEndIndex)
+        {
+            return NULL;
+        }
+
+        int rootVal = Preorder[preStartIndex];
+        TreeNode *root = new TreeNode(rootVal);
+        if (preStartIndex == preEndIndex)
+        {
+            return root;
+        }
+        else
+        {
+            int inOrderRootIndex = inorderMap[rootVal];
+            int letfNodeCount = inOrderRootIndex - inStartIndex;
+            int rightNodeCount = inEndIndex - inOrderRootIndex;
+
+            root->left = build(preStartIndex + 1, preStartIndex + letfNodeCount, inStartIndex, inOrderRootIndex - 1);
+            root->right = build(preEndIndex - rightNodeCount + 1, preEndIndex, inOrderRootIndex + 1, inEndIndex);
+
+            return root;
+        }
+    }
 };
 void Run()
 {
@@ -83,7 +123,7 @@ void Run()
     vector<int> preOrder(preOrders, preOrders + 5);
 
     int inOrders[] = {1, 2}; //{9, 3, 15, 20, 7};
-    vector<int> inOrder(inOrders, inOrders + 5);
+    vector<int> inOrder(inOrders, inOrders + 2);
     TreeNode *res = solution.buildTree(preOrder, inOrder);
     printf("end");
 }
