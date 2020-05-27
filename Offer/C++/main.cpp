@@ -1,4 +1,4 @@
-#include "2020/BuildTree.cpp"
+#include "2020/MinArray.cpp"
 #include <iostream>
 int main(int, char **)
 {
