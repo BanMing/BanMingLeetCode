@@ -1,4 +1,4 @@
-#include "2020/MinArray.cpp"
+#include "2020/RebotMovingCount.cpp"
 #include <iostream>
 int main(int, char **)
 {
