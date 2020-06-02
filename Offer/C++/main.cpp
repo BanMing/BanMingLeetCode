@@ -1,4 +1,4 @@
-#include "2020/HammingWeight.cpp"
+#include "2020/MyPow.cpp"
 #include <iostream>
 int main(int, char **)
 {
