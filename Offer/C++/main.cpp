@@ -1,4 +1,4 @@
-#include "2020/CuttingRope2.cpp"
+#include "2020/HammingWeight.cpp"
 #include <iostream>
 int main(int, char **)
 {
