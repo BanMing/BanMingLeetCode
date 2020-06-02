@@ -14,7 +14,7 @@ https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/
 class Solution
 {
 public:
-    int cuttingRope(int n)
+    int cuttingRopeDp(int n)
     {
         std::vector<long> dp(n + 1, 0);
         dp[1] = 1;
@@ -22,18 +22,34 @@ public:
         {
             for (size_t j = 1; j <= i; j++)
             {
-                long m = std::max(((i - j) * j)%1000000007, (dp[i - j] * j)%1000000007);
+                long m = std::max(((i - j) * j) % 1000000007, (dp[i - j] * j) % 1000000007);
                 dp[i] = std::max(dp[i], m);
             }
         }
         return dp[n];
+    }
+
+    int cuttingRope(int n)
+    {
+        if (n <= 3)
+        {
+            return n - 1;
+        }
+
+        long res = 1;
+        while (n > 4)
+        {
+            res = (res % 1000000007 * 3);
+            n -= 3;
+        }
+        return (res * n) % 1000000007;
     }
 };
 
 void Run()
 {
     Solution solution;
-    // printf("n = 8 x = %d \n", solution.cuttingRope(8));
-    // printf("n = 10 x = %d \n", solution.cuttingRope(10));
+    printf("n = 8 x = %d \n", solution.cuttingRope(8));
+    printf("n = 10 x = %d \n", solution.cuttingRope(10));
     printf("n = 120 x = %d \n", solution.cuttingRope(120));
 }
