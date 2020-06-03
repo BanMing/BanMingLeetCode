@@ -13,7 +13,7 @@ https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/
 class Solution
 {
 public:
-    double myPow(double x, int n)
+    double myPowSlef(double x, int n)
     {
         int len = n < 0 ? -n : n;
         double res = 1;
@@ -22,6 +22,28 @@ public:
             res *= x;
         }
         res = n < 0 ? 1 / res : res;
+        return res;
+    }
+    double myPow(double x, int n)
+    {
+        // 以免越界
+        long m = n;
+        if (m < 0)
+        {
+            m = -m;
+            x = 1 / x;
+        }
+
+        double res = 1;
+        while (m > 0)
+        {
+            if ((m & 1) == 1)
+            {
+                res *= x;
+            }
+            x *= x;
+            m = m >> 1;
+        }
         return res;
     }
 };
