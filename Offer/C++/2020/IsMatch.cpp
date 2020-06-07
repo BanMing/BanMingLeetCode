@@ -17,40 +17,47 @@ class Solution
 public:
     bool isMatch(string s, string p)
     {
-        if (s.empty() || p.empty())
-        {
-            return false;
-        }
 
-        vector<vector<bool> > dp(s.size());
-        for (size_t i = 0; i < s.size(); i++)
+        vector<vector<bool> > dp(s.size() + 1);
+        for (size_t i = 0; i < s.size() + 1; i++)
         {
-            dp[i].resize(p.size());
-            for (size_t j = 0; j < p.size(); j++)
+            dp[i].resize(p.size() + 1);
+            for (size_t j = 0; j < p.size() + 1; j++)
             {
-                dp[i][j] = false;
-            }
-        }
-
-        dp[0][0] = s[0] == p[0] || p[0] == '.';
-
-        for (size_t i = 1; i < s.empty(); i++)
-        {
-            for (size_t j = 1; j < p.empty(); j++)
-            {
-                bool isEqual = (p[j] == '.' || s[i] == p[i]) && dp[i - 1][j - 1];
-                if (p[j] == '*')
+                if (j == 0)
                 {
-                    bool noContains = j > 1 && dp[i][j - 2];
-                    bool isOneMore = (p[j - 1] == s[i] || p[j - 1] == '.') && dp[i - 1][j];
-                    isEqual = isEqual || noContains || isOneMore;
+                    dp[i][j] = i == 0;
                 }
-                dp[i][j] = isEqual;
+                else
+                {
+
+                    bool isEqual = false;
+                    if (p[j - 1] != '*')
+                    {
+                        // 不含有*
+                        isEqual = i > 0 && dp[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '.');
+                    }
+                    else
+                    {
+                        // 含有* *为0表示
+                        isEqual = isEqual || (j >= 2 && dp[i][j - 2]);
+
+                        // 含有* *为多个或1个
+                        isEqual = isEqual || (i >= 1 && j >= 2 && (s[i - 1] == p[j - 2] || p[j - 2] == '.') && dp[i - 1][j]);
+                    }
+                    dp[i][j] = isEqual;
+                }
             }
         }
+
         return dp[s.size()][p.size()];
     }
 };
 void Run()
 {
+    Solution solution;
+    printf("s=aa p = a isMacth %d \n", solution.isMatch("aa", "a"));
+    printf("s=aa p = a* isMacth %d \n",solution.isMatch("aa","a*"));
+    printf("s=ab p = .* isMacth %d \n",solution.isMatch("aa",".*"));
+    printf("s=mississippi p = mis*is*p*. isMacth %d \n",solution.isMatch("mississippi","mis*is*p*."));
 }
