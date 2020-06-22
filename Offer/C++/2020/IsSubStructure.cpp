@@ -16,14 +16,59 @@ class Solution
 public:
     bool isSubStructure(TreeNode *A, TreeNode *B)
     {
+        return isEqual(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B);
+    }
 
-        return true;
+    bool isEqual(TreeNode *A, TreeNode *B)
+    {
+        if (B == NULL && A != NULL)
+        {
+            return true;
+        }
+        if (A == NULL)
+        {
+            return false;
+        }
+        return isEqual(A->left, B->left) && isEqual(A->right, B->right);
+    }
+
+    bool isSubStructureSelf(TreeNode *A, TreeNode *B)
+    {
+        if (B == nullptr || A == nullptr)
+        {
+            return false;
+        }
+
+        vector<int> a = preOrder(A);
+        vector<int> b = preOrder(B);
+        for (size_t i = 0; i < a.size(); i++)
+        {
+            if (a[i] == b[0])
+            {
+                size_t m = i + 1;
+                for (size_t j = 1; j < b.size(); j++)
+                {
+                    if (m >= a.size() || a[m] != b[j])
+                    {
+                        break;
+                    }
+                    m++;
+                }
+                if (m - i == b.size())
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 private:
     vector<int> preOrder(TreeNode *tree)
     {
         stack<TreeNode *> treeStack;
+        vector<int> res;
         while (tree != NULL || !treeStack.empty())
         {
 
@@ -31,6 +76,7 @@ private:
             {
                 treeStack.push(tree);
                 printf("cur node : %d \n", tree->val);
+                res.push_back(tree->val);
                 tree = tree->left;
             }
 
@@ -41,6 +87,7 @@ private:
                 tree = top->right;
             }
         }
+        return res;
     }
 };
 
@@ -48,10 +95,21 @@ void Run()
 {
     Solution solution;
 
-    TreeNode treeA(1);
-    treeA.left = new TreeNode(2);
-    treeA.right = new TreeNode(3);
-    treeA.left->left = new TreeNode(4);
-    treeA.left->right = new TreeNode(5);
-    solution.isSubStructure(&treeA, nullptr);
+    TreeNode treeA(10);
+
+    treeA.left = new TreeNode(12);
+    treeA.right = new TreeNode(6);
+
+    treeA.left->left = new TreeNode(8);
+    treeA.left->right = new TreeNode(3);
+
+    treeA.right->left = new TreeNode(11);
+
+    TreeNode treeB(10);
+
+    treeB.left = new TreeNode(12);
+    treeB.right = new TreeNode(6);
+
+    treeB.left->left = new TreeNode(8);
+    printf("isSubStructure %d \n", solution.isSubStructure(&treeA, &treeB));
 }
