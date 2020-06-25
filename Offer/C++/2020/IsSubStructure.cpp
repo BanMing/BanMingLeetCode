@@ -1,3 +1,5 @@
+// 剑指 Offer 26. 树的子结构
+// https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -16,12 +18,17 @@ class Solution
 public:
     bool isSubStructure(TreeNode *A, TreeNode *B)
     {
+        if (B == NULL || A == NULL)
+        {
+            return false;
+        }
+
         return isEqual(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B);
     }
 
     bool isEqual(TreeNode *A, TreeNode *B)
     {
-        if (B == NULL && A != NULL)
+        if (B == NULL)
         {
             return true;
         }
@@ -29,7 +36,7 @@ public:
         {
             return false;
         }
-        return isEqual(A->left, B->left) && isEqual(A->right, B->right);
+        return A->val == B->val && isEqual(A->left, B->left) && isEqual(A->right, B->right);
     }
 
     bool isSubStructureSelf(TreeNode *A, TreeNode *B)
@@ -95,21 +102,23 @@ void Run()
 {
     Solution solution;
 
-    TreeNode treeA(10);
+    // [1,0,1,-4,-3]
+    // [1,-4]
+    TreeNode treeA(1);
 
-    treeA.left = new TreeNode(12);
-    treeA.right = new TreeNode(6);
+    treeA.left = new TreeNode(0);
+    treeA.right = new TreeNode(1);
 
-    treeA.left->left = new TreeNode(8);
-    treeA.left->right = new TreeNode(3);
+    treeA.left->left = new TreeNode(-4);
+    treeA.left->right = new TreeNode(-3);
 
-    treeA.right->left = new TreeNode(11);
+    // treeA.right->left = new TreeNode(11);
 
-    TreeNode treeB(10);
+    TreeNode treeB(-4);
 
-    treeB.left = new TreeNode(12);
-    treeB.right = new TreeNode(6);
+    // treeB.left = new TreeNode(-4);
+    // treeB.right = new TreeNode(6);
 
-    treeB.left->left = new TreeNode(8);
+    // treeB.left->left = new TreeNode(8);
     printf("isSubStructure %d \n", solution.isSubStructure(&treeA, &treeB));
 }
