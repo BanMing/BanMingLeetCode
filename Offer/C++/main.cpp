@@ -1,4 +1,4 @@
-#include "2020/IsSubStructure.cpp"
+#include "2020/MirrorTree.cpp"
 #include <iostream>
 int main(int, char **)
 {
