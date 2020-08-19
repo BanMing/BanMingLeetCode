@@ -1,5 +1,5 @@
 #include <iostream>
-#include "30days/detectCapitalUse.cpp"
+#include "Array/FindMaxConsecutiveOnes.cpp"
 
 int main(int, char **)
 {
