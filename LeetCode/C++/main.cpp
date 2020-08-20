@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Array/FindMaxConsecutiveOnes.cpp"
+#include "Array/SortedSquares.cpp"
 
 int main(int, char **)
 {
