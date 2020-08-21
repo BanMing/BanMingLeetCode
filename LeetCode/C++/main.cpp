@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Array/DuplicateZeros.cpp"
+#include "Array/MergeTwoList.cpp"
 
 int main(int, char **)
 {
