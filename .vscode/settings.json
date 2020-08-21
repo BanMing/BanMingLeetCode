@@ -3,6 +3,7 @@
     "cmake.sourceDirectory": "${workspaceFolder}/LeetCode/C++",
     "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
     "files.associations": {
+        "*.cfg": "coffeescript",
         "*.cjson": "jsonc",
         "*.wxss": "css",
         "*.wxs": "javascript",
@@ -88,7 +89,8 @@
         "mutex": "cpp",
         "ratio": "cpp",
         "stack": "cpp",
-        "__cxx_version": "cpp"
+        "__cxx_version": "cpp",
+        "xmemory0": "cpp"
     },
     "cmake.configureOnOpen": true
 }

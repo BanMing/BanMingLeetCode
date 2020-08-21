@@ -41,27 +41,14 @@ public:
 
     std::vector<int> sortedSquares(std::vector<int> &A)
     {
-        int negativeCount = 0;
-        for (size_t i = 0; i < A.size(); i++)
-        {
-            if (A[i] < 0)
-            {
-                negativeCount++;
-            }
-            else
-            {
-                break;
-            }
-        }
-
         int l = 0;
-        size_t r = A.size() - 1;
+        size_t r = A.size();
         size_t p = A.size() - 1;
         std::vector<int> res(A.size());
         while (r > l)
         {
             int a = A[l] * A[l];
-            int b = A[r] * A[r];
+            int b = A[r - 1] * A[r - 1];
             if (a > b)
             {
                 res[p] = a;

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Array/SortedSquares.cpp"
+#include "Array/DuplicateZeros.cpp"
 
 int main(int, char **)
 {
