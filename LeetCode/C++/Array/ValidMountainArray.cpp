@@ -2,7 +2,7 @@
 ** ValidMountainArray.cpp
 ** @Author       : BanMing 
 ** @Date         : 2020/8/25 上午10:53:15
-** @Description  : 
+** @Description  : https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3251/
 *******************************************************************/
 
 #include <iostream>
@@ -21,12 +21,12 @@ public:
         bool isRaise = true;
         for (size_t i = 1; i < A.size(); i++)
         {
-            if (isRaise && A[i] < A[i - 1])
+            if (isRaise && A[i] <= A[i - 1])
             {
                 isRaise = false;
             }
 
-            if (A[i] > A[i - 1] && !isRaise)
+            if (A[i] >= A[i - 1] && !isRaise)
             {
                 return false;
             }
