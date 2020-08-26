@@ -22,7 +22,7 @@ public:
         return maxNum;
     }
 
-    vector<int> replaceElements(vector<int> &arr)
+    vector<int> replaceElementsSelf(vector<int> &arr)
     {
         vector<int> res(arr.size());
         if (arr.size() == 1)
@@ -46,6 +46,19 @@ public:
             res[i] = curMaxNum;
         }
         return res;
+    }
+    vector<int> replaceElements(vector<int> &arr)
+    {
+        int l = arr.size();
+        int maxNum = arr[l - 1];
+        arr[l - 1] = -1;
+        for (int i = l - 2; i > -1; i--)
+        {
+            int temp = arr[i];
+            arr[i] = maxNum;
+            maxNum = maxNum > temp ? maxNum : temp;
+        }
+        return arr;
     }
 };
 void Run()
