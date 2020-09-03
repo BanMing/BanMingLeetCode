@@ -3,6 +3,7 @@ project(leetcode VERSION 0.1.0)
 
 # include(CTest)
 # enable_testing()
+add_definitions(-std=c++11)
 
 add_executable(leetcode main.cpp)
 
