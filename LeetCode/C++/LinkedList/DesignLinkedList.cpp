@@ -74,6 +74,11 @@ public:
     /** Append a node of value val to the last element of the linked list. */
     void addAtTail(int val)
     {
+        if (head == NULL)
+        {
+            addAtHead(val);
+        }
+
         LinkedNode *newNode = new LinkedNode(val, NULL);
         LinkedNode *curNode = head;
         while (curNode != NULL && curNode->nextNode != NULL)
@@ -94,18 +99,31 @@ public:
         {
             return;
         }
-        listLen++;
 
-        LinkedNode *newNode = new LinkedNode(val, NULL);
-        LinkedNode *curNode = head;
-        int curIndex = 0;
-        while (index - 1 > curIndex)
+        if (index == 0)
         {
-            curNode = curNode->nextNode;
-            curIndex++;
+            addAtHead(val);
         }
-        newNode->nextNode = curNode->nextNode;
-        curNode->nextNode = newNode;
+        else if (index == listLen)
+        {
+            addAtTail(val);
+        }
+        else
+        {
+            listLen++;
+
+            LinkedNode *newNode = new LinkedNode(val, NULL);
+            LinkedNode *curNode = head;
+
+            int curIndex = 0;
+            while (index - 1 > curIndex)
+            {
+                curNode = curNode->nextNode;
+                curIndex++;
+            }
+            newNode->nextNode = curNode->nextNode;
+            curNode->nextNode = newNode;
+        }
     }
 
     /** Delete the index-th node in the linked list, if the index is valid. */
@@ -116,6 +134,14 @@ public:
             return;
         }
 
+        listLen--;
+
+        if (index == 0)
+        {
+            head = head->nextNode;
+            return;
+        }
+
         LinkedNode *curNode = head;
         int curIndex = 0;
         while (index - 1 > curIndex)
@@ -123,18 +149,20 @@ public:
             curNode = curNode->nextNode;
             curIndex++;
         }
+
         curNode->nextNode = curNode->nextNode->nextNode;
-        listLen--;
     }
 };
 
 void Run()
 {
     MyLinkedList myLinkedList;
-    myLinkedList.addAtHead(1);
-    myLinkedList.addAtTail(3);
-    myLinkedList.addAtIndex(1, 2);       // linked list becomes 1->2->3
-    cout << myLinkedList.get(1) << endl; // return 2
-    myLinkedList.deleteAtIndex(1);       // now the linked list is 1->3
-    cout << myLinkedList.get(1) << endl; // return 3
+    // myLinkedList.addAtHead(1);
+    // myLinkedList.addAtTail(3);
+    myLinkedList.addAtIndex(0, 1);       // linked list becomes 1->2->3
+    myLinkedList.addAtIndex(0, 2);       // linked list becomes 1->2->3
+    myLinkedList.addAtIndex(1, 30);      // linked list becomes 1->2->3
+    cout << myLinkedList.get(0) << endl; // return 2
+    // myLinkedList.deleteAtIndex(0);       // now the linked list is 1->3
+    // cout << myLinkedList.get(1) << endl; // return 3
 }
